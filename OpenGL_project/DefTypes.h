@@ -2,6 +2,7 @@
 #define _DEFTYPES
 
 #include "CommonInc.h"
+#include "VertexBuffer.h"
 
 #define declare_type(SELF)\
 	typedef std::shared_ptr<SELF> S##SELF;
@@ -14,5 +15,6 @@ declare_type(btDiscreteDynamicsWorld)
 declare_type(btBroadphaseInterface)
 declare_type(btCollisionShape)
 declare_type(btRigidBody)
+declare_type(AKVertexBuffer)
 
 #endif

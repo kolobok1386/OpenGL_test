@@ -365,28 +365,32 @@ int main()
 	////////////
 
 	// Это будет идентификатором нашего буфера вершин
+	SAKVertexBuffer vertBuffer(new AKVertexBuffer());
+
 	GLuint vertexbuffer1;
 
 	// Создадим 1 буфер и поместим в переменную vertexbuffer его идентификатор
-	glGenBuffers(1, &vertexbuffer1);
+	//glGenBuffers(1, &vertexbuffer1);
 
-	// Сделаем только что созданный буфер текущим
-	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer1);
+	//// Сделаем только что созданный буфер текущим
+	//glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer1);
 
-	// Передадим информацию о вершинах в OpenGL
-	glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)* vertices1.size(), &vertices1[0], GL_STATIC_DRAW);
+	//// Передадим информацию о вершинах в OpenGL
+	//glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)* vertices1.size(), &vertices1[0], GL_STATIC_DRAW);
 
 
-	//!!!!!!!!
+	////!!!!!!!!
 
-	// fill "indices" as needed
+	//// fill "indices" as needed
 
-	// Generate a buffer for the indices
-	GLuint elementbuffer1;
-	glGenBuffers(1, &elementbuffer1);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer1);
+	//// Generate a buffer for the indices
+	//GLuint elementbuffer1;
+	//glGenBuffers(1, &elementbuffer1);
+	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer1);
 
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices1.size() * sizeof(unsigned int), &indices1[0], GL_STATIC_DRAW);
+	//glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices1.size() * sizeof(unsigned int), &indices1[0], GL_STATIC_DRAW);
+
+	vertBuffer->init(&vertices1[0], vertices1.size(), &indices1[0], indices1.size(), false);
 
 	// Создать и откомпилировать нашу шейдерную программу
 	GLuint cubeProgramID = LoadShaders("cube.vert", "cube.frag");
@@ -514,7 +518,8 @@ int main()
 		//glUniform1f(posYoffsetID, posY);
 
 		glEnableVertexAttribArray(2);
-		glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer1);
+		vertBuffer->bindVertices();
+		//glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer1);
 		glVertexAttribPointer(
 			2,                  // Атрибут 0. Подробнее об этом будет рассказано в части, посвященной шейдерам.
 			3,                  // Размер
@@ -525,7 +530,8 @@ int main()
 			);
 
 		// Index buffer
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer1);
+		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer1);
+		vertBuffer->bindIndices();
 
 		// Draw the triangles !
 		glDrawElements(

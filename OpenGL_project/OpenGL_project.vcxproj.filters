@@ -19,6 +19,9 @@
     <Filter Include="Framework">
       <UniqueIdentifier>{22fc6335-9eec-420c-b108-fc127244ade1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Common">
+      <UniqueIdentifier>{3767d058-583b-4bae-b3f7-6ae54e08457a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGL_main.cpp">
@@ -54,6 +57,33 @@
     <ClCompile Include="BulletPhysics.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderEffect.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgram.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneComponent.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationWindow.cpp">
+      <Filter>Framework\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshLoader.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL_main.h">
@@ -86,13 +116,43 @@
     <ClInclude Include="VertexBuffer.h">
       <Filter>Framework</Filter>
     </ClInclude>
-    <ClInclude Include="CommonInc.h">
-      <Filter>Framework</Filter>
-    </ClInclude>
     <ClInclude Include="BulletPhysics.h">
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="DefTypes.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderEffect.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="RTTI.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonInc.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneComponent.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationWindow.h">
+      <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshLoader.h">
       <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>

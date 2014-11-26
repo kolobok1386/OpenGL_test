@@ -1,11 +1,11 @@
 #include "VertexBuffer.h"
 
 AKVertexBuffer::AKVertexBuffer()
+: m_bufVertexId(0),
+m_bufIndexId(0),
+m_vertexArrayLength(0),
+m_indexArrayLength(0)
 {
-	m_bufVertexId = 0;
-	m_bufIndexId = 0;
-	m_vertexArrayLength = 0;
-	m_indexArrayLength = 0;
 }
 
 AKVertexBuffer::~AKVertexBuffer()

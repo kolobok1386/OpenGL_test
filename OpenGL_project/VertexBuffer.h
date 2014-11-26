@@ -14,7 +14,7 @@ public:
 	void bindIndices();
 	void init(const GLfloat *vertices, GLuint vertexArrayLength,
 		const GLuint *indices, GLuint indexArrayLength, bool isDynamic);
-	void connectProgram();
+	//void connectProgram();
 
 protected:
 

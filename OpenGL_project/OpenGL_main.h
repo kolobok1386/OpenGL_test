@@ -23,8 +23,8 @@ using namespace glm;
 #include <string>
 #include <fstream>
 
-#include <CEGUI/CEGUI.h>
-#include <CEGUI/RendererModules/OpenGL/GLRenderer.h>
-using namespace CEGUI;
+//#include <CEGUI/CEGUI.h>
+//#include <CEGUI/RendererModules/OpenGL/GLRenderer.h>
+//using namespace CEGUI;
 
 

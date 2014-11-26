@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>d:\temp\cegui-0.8.4\cegui-0.8.4\build\lib\;d:\temp\glew-1.11.0-win32\glew-1.11.0\lib\Release\Win32\;d:\temp\openFrameworks\openFrameworks-master\openFrameworks-master\libs\glfw\lib\vs\;$(LibraryPath)</LibraryPath>
-    <IncludePath>d:\temp\cegui-0.8.4\cegui-0.8.4\build\cegui\include\;d:\temp\cegui-0.8.4\cegui-0.8.4\cegui\include\;D:\temp\glfw-3.0.4\glfw-3.0.4\include;D:\libs\bullet-2.82-r2704\src;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\external\glm;$(SolutionDir)\external\gl3w\include;$(SolutionDir)\external\glfw\include;D:\libs\bullet-2.82-r2704\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -55,7 +55,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OPENGL;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <MinimalRebuild>false</MinimalRebuild>
@@ -89,6 +89,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="ApplicationWindow.cpp" />
     <ClCompile Include="BulletPhysics.cpp" />
     <ClCompile Include="common\controls.cpp" />
     <ClCompile Include="common\objloader.cpp" />
@@ -98,10 +100,19 @@
     <ClCompile Include="common\text2D.cpp" />
     <ClCompile Include="common\texture.cpp" />
     <ClCompile Include="common\vboindexer.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshLoader.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGL_main.cpp" />
+    <ClCompile Include="SceneComponent.cpp" />
+    <ClCompile Include="ShaderEffect.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="ApplicationWindow.h" />
     <ClInclude Include="BulletPhysics.h" />
     <ClInclude Include="CommonInc.h" />
     <ClInclude Include="common\controls.hpp" />
@@ -113,18 +124,26 @@
     <ClInclude Include="common\texture.hpp" />
     <ClInclude Include="common\vboindexer.hpp" />
     <ClInclude Include="DefTypes.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshLoader.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="SceneComponent.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="OpenGL_main.h" />
+    <ClInclude Include="RTTI.h" />
+    <ClInclude Include="ShaderEffect.h" />
+    <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\libs\bullet-2.82-r2704\build\vs2010\BulletCollision.vcxproj">
-      <Project>{c9d28721-91e8-ac4f-bc96-a50beb1c9a5d}</Project>
+    <ProjectReference Include="..\libs\bullet-2.82-r2704\bullet-2.82-r2704\build\vs2010\BulletCollision.vcxproj">
+      <Project>{09edec74-0567-7b47-b77f-88eb7e5ca9ed}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet-2.82-r2704\build\vs2010\BulletDynamics.vcxproj">
-      <Project>{de057eb4-6f93-ee4d-9272-bc2f7b008b8c}</Project>
+    <ProjectReference Include="..\libs\bullet-2.82-r2704\bullet-2.82-r2704\build\vs2010\BulletDynamics.vcxproj">
+      <Project>{cc576201-4015-fa4f-9031-8a91ce343b00}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet-2.82-r2704\build\vs2010\LinearMath.vcxproj">
-      <Project>{6d36094e-2362-594e-b356-1afc408ba95c}</Project>
+    <ProjectReference Include="..\libs\bullet-2.82-r2704\bullet-2.82-r2704\build\vs2010\LinearMath.vcxproj">
+      <Project>{027e39c4-adb4-e44d-a250-70e15f1e03ff}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

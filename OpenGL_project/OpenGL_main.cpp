@@ -365,7 +365,7 @@ int main()
 	////////////
 
 	// Это будет идентификатором нашего буфера вершин
-	SAKVertexBuffer vertBuffer(new AKVertexBuffer());
+	auto vertBuffer = std::make_shared<AKVertexBuffer>();
 
 	GLuint vertexbuffer1;
 
@@ -425,9 +425,9 @@ int main()
 	///////////////END CEGUI
 
 	// Cull triangles which normal is not towards the camera
-	//glEnable(GL_CULL_FACE);
-	//glCullFace(GL_BACK);
-	//glFrontFace(GL_CCW);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	do
 	{
@@ -446,14 +446,14 @@ int main()
 		current_time = static_cast<GLfloat>(glfwGetTime());
 		GLfloat delta_time = static_cast<GLfloat>(current_time - old_time);
 		GLfloat FPS = static_cast<GLfloat>(1.0 / delta_time);
-		fprintf(stdout, "delta = %f \n", FPS);
+		//fprintf(stdout, "delta = %f \n", FPS);
 
 		physics->getDynamicsWorld()->stepSimulation(delta_time);
 		btTransform trans;
 		fallRigidBody->getMotionState()->getWorldTransform(trans);
 		btScalar posY = trans.getOrigin().getY();
-		////if(glm::abs(1.0f - posY) > 0.001f)
-		//	//fprintf(stdout, "sphere height: %f \n", posY);
+		if(glm::abs(1.0f - posY) > 0.001f)
+			fprintf(stdout, "sphere height: %f \n", posY);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID);
@@ -510,7 +510,7 @@ int main()
 		glm::mat4 MVPCube = Projection * View * ModelMatCube;
 		glUseProgram(cubeProgramID);
 		GLuint cubeMatrixID = glGetUniformLocation(cubeProgramID, "MVP");
-		glUniformMatrix4fv(cubeMatrixID, 1, GL_FALSE, &MVP[0][0]);
+		glUniformMatrix4fv(cubeMatrixID, 1, GL_FALSE, &MVPCube[0][0]);
 
 		
 

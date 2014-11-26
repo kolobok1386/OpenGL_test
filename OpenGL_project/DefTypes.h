@@ -1,20 +1,31 @@
 #ifndef _DEFTYPES
 #define _DEFTYPES
 
-#include "CommonInc.h"
+//#include "CommonInc.h"
 #include "VertexBuffer.h"
+#include "ShaderProgram.h"
+#include "Mesh.h"
 
-#define declare_type(SELF)\
-	typedef std::shared_ptr<SELF> S##SELF;
+//class AKVertexBuffer;
+class AKMesh;
+class AKShaderVariable;
 
-declare_type(btDefaultCollisionConfiguration)
-declare_type(btCollisionDispatcher)
-declare_type(btDbvtBroadphase)
-declare_type(btSequentialImpulseConstraintSolver)
-declare_type(btDiscreteDynamicsWorld)
-declare_type(btBroadphaseInterface)
-declare_type(btCollisionShape)
-declare_type(btRigidBody)
-declare_type(AKVertexBuffer)
+
+#define declare_types(SELF)\
+	typedef std::shared_ptr<SELF> S##SELF;\
+	typedef std::weak_ptr<SELF> W##SELF;\
+	typedef std::unique_ptr<SELF> U##SELF;
+
+declare_types(btDefaultCollisionConfiguration)
+declare_types(btCollisionDispatcher)
+declare_types(btDbvtBroadphase)
+declare_types(btSequentialImpulseConstraintSolver)
+declare_types(btDiscreteDynamicsWorld)
+declare_types(btBroadphaseInterface)
+declare_types(btCollisionShape)
+declare_types(btRigidBody)
+//declare_types(AKVertexBuffer)
+//declare_types(AKMesh)
+//declare_types(AKShaderVariable)
 
 #endif

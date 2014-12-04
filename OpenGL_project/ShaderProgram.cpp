@@ -1,5 +1,7 @@
 #include "ShaderProgram.h"
 
+RTTI_DEFINITIONS(AKShaderVariable)
+
 AKShaderVariable::AKShaderVariable(AKShaderProgram& shaderProgram, std::string& name)
 : m_shaderProgram(shaderProgram),
 m_name(name)
@@ -48,6 +50,8 @@ void AKShaderVariable::setValue(int value)
 };
 
 //////////////////////////////
+
+RTTI_DEFINITIONS(AKShaderProgram)
 
 AKShaderProgram::AKShaderProgram()
 : m_variables(),

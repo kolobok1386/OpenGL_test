@@ -3,6 +3,7 @@
 
 #include "CommonInc.h"
 #include "Time.h"
+#include "GameClock.h"
 #include "SceneComponent.h"
 #include "ApplicationWindow.h"
 
@@ -24,12 +25,13 @@ protected:
 	virtual void InitWindow();
 
 private:
-	std::vector<SceneComponent> m_sceneComponents;
 	Time m_appTime;
+	GameClock m_appClock;
 	bool m_isFullScreen;
 	ApplicationWindow m_mainWindow;
 	int m_screenWidth;
 	int m_screenHeight;
+	SceneComponent* m_scene;
 };
 
 

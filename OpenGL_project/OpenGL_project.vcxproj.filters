@@ -22,6 +22,9 @@
     <Filter Include="Framework\Common">
       <UniqueIdentifier>{3767d058-583b-4bae-b3f7-6ae54e08457a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\ComponentSystem">
+      <UniqueIdentifier>{ebf0a311-e7f0-4980-8c7b-36582243e50c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGL_main.cpp">
@@ -83,6 +86,33 @@
     </ClCompile>
     <ClCompile Include="MeshLoader.cpp">
       <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\BaseComponent.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\PositionComponent.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\RenderSystem.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\BaseSystem.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\BaseEntity.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem\RenderComponent.cpp">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseRenderObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderObject.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="GameClock.cpp">
+      <Filter>Framework\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +184,33 @@
     </ClInclude>
     <ClInclude Include="MeshLoader.h">
       <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\BaseComponent.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\PositionComponent.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\RenderSystem.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\BaseSystem.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\BaseEntity.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem\RenderComponent.h">
+      <Filter>Framework\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRenderObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderObject.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="GameClock.h">
+      <Filter>Framework\Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

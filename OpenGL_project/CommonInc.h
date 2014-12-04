@@ -9,6 +9,7 @@
 #include <memory>
 #include <vector>
 #include <map>
+#include <unordered_map>
 //#include "DefTypes.h"
 
 #if defined(OPENGL)
@@ -25,6 +26,17 @@
 #define GLFW_EXPOSE_NATIVE_WGL
 #endif
 
+typedef std::string componentID;
+
 #include "RTTI.h"
+
+#define DELETE_PTR(ptr)\
+	if(ptr) \
+	{ \
+		delete ptr; \
+		ptr = 0; \
+	};
+	
+
 
 #endif

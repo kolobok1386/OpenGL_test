@@ -1,5 +1,7 @@
 #include "BulletPhysics.h"
 
+RTTI_DEFINITIONS(BulletPhysics)
+
 void BulletPhysics::initObjects() 
 {
 	m_collisionConfiguration = std::shared_ptr<btDefaultCollisionConfiguration>(new btDefaultCollisionConfiguration());

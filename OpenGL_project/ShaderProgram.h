@@ -7,8 +7,9 @@
 class AKShaderProgram;
 class AKShaderVariable;
 
-class AKShaderVariable
+class AKShaderVariable : public RTTI
 {
+	RTTI_DECLARATIONS(AKShaderVariable, RTTI)
 public:
 	AKShaderVariable(AKShaderProgram& shaderProgram, std::string& name);
 	~AKShaderVariable();
@@ -27,8 +28,9 @@ private:
 	AKShaderProgram& m_shaderProgram;
 };
 
-class AKShaderProgram
+class AKShaderProgram : public RTTI
 {
+	RTTI_DECLARATIONS(AKShaderProgram, RTTI)
 public:
 	AKShaderProgram();
 	~AKShaderProgram();

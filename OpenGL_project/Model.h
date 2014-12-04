@@ -3,15 +3,21 @@
 
 #include "CommonInc.h"
 #include "DefTypes.h"
+#include "SceneComponent.h"
 
-class AKModel
+class AKModel : public RTTI
 {
+	RTTI_DECLARATIONS(AKModel, RTTI)
 public:
-	AKModel();
+	AKModel(SceneComponent& owner);
 	~AKModel();
 
+	void addMesh(AKMesh* mesh);
+	std::vector<AKMesh* >& getMeshes();
+
 private:
-	std::vector<std::shared_ptr<AKMesh> > m_meshes;
+	std::vector<AKMesh* > m_meshes;	
+	SceneComponent& m_owner;
 
 };
 

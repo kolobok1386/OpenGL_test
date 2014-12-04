@@ -3,8 +3,9 @@
 
 #include "CommonInc.h"
 
-class AKVertexBuffer
+class AKVertexBuffer : public RTTI
 {
+	RTTI_DECLARATIONS(AKVertexBuffer, RTTI)
 public:
 	AKVertexBuffer();
 	~AKVertexBuffer();

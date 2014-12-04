@@ -1,5 +1,7 @@
 #include "ShaderEffect.h"
 
+RTTI_DEFINITIONS(AKShaderEffect)
+
 AKShaderEffect::AKShaderEffect()
 {
 	m_shaderId = 0;

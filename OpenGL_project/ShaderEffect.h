@@ -6,8 +6,9 @@
 #include <fstream>
 #include <string>
 
-class AKShaderEffect
+class AKShaderEffect : public RTTI
 {
+	RTTI_DECLARATIONS(AKShaderEffect, RTTI)
 public:
 	AKShaderEffect();
 	~AKShaderEffect();

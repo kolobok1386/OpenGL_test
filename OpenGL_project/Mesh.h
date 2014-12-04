@@ -2,10 +2,14 @@
 #define _MESH
 
 #include "CommonInc.h"
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include <assimp/Importer.hpp>
 
 class AKModel;
-class AKMesh
+class AKMesh : public RTTI
 {
+	RTTI_DECLARATIONS(AKMesh, RTTI)
 public:
 	AKMesh(AKModel& owner);
 	~AKMesh();
@@ -14,6 +18,8 @@ public:
 	std::vector<glm::vec4>& getVertexColors();
 	std::vector<glm::vec3>& getVertexNormals();
 	std::vector<UINT>& getIndices();
+
+	void loadFromFile(std::string& filename);
 
 private:
 	std::vector<glm::vec3> m_vertexPositions;

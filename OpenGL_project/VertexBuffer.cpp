@@ -1,5 +1,7 @@
 #include "VertexBuffer.h"
 
+RTTI_DEFINITIONS(AKVertexBuffer)
+
 AKVertexBuffer::AKVertexBuffer()
 : m_bufVertexId(0),
 m_bufIndexId(0),

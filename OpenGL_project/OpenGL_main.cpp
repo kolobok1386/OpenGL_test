@@ -127,7 +127,7 @@ void generateSquareModel(std::vector<GLfloat>* vertices, std::vector<unsigned in
 
 }
 
-int main()
+/*int main()
 {
 	// Инициализируем GLFW
 	if(!glfwInit())
@@ -564,4 +564,12 @@ int main()
 	glfwWindowShouldClose(window) == 0);
 	//delete[] g_vertex_buffer_data;
 
+}*/
+
+
+int main()
+{
+	Application app;
+	app.Run();
+	return 0;
 }

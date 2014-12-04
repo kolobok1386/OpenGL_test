@@ -3,6 +3,7 @@
 
 #include "CommonInc.h"
 #include "Time.h"
+#include "ComponentSystem\RenderSystem.h"
 
 class Application;
 class Time;
@@ -22,6 +23,8 @@ public:
 
 protected:
 	Application* m_owner;
+	RenderSystem* m_renderSystem;
+
 };
 
 #endif

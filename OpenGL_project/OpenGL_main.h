@@ -1,4 +1,5 @@
 #include "BulletPhysics.h"
+#include "Application.h"
 
 // ¬ключаем стандартные заголовки
 #include <stdio.h>

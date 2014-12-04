@@ -1,5 +1,7 @@
 #include "Mesh.h"
 
+RTTI_DEFINITIONS(AKMesh)
+
 AKMesh::AKMesh(AKModel& owner)
 : m_owner(owner)
 {
@@ -29,4 +31,13 @@ std::vector<glm::vec3>& AKMesh::getVertexNormals()
 std::vector<UINT>& AKMesh::getIndices()
 {
 	return m_indices;
+}
+
+void AKMesh::loadFromFile(std::string& filename)
+{
+	Assimp::Importer Importer;
+
+	const aiScene* pScene = Importer.ReadFile(filename.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs);
+
+	
 }

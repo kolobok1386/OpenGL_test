@@ -12,6 +12,8 @@ public:
 
 	virtual ~ApplicationWindow();
 
+	GLFWwindow* getWnd() { return m_window;	};
+
 	void Init();
 
 protected:

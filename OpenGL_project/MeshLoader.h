@@ -4,8 +4,9 @@
 #include "CommonInc.h"
 
 class AKMesh;
-class AKMeshLoader
+class AKMeshLoader : public RTTI
 {
+	RTTI_DECLARATIONS(AKMeshLoader, RTTI)
 public:
 	AKMeshLoader(AKMesh& owner);
 	~AKMeshLoader();

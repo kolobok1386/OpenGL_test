@@ -2,32 +2,40 @@
 #define _MESH
 
 #include "CommonInc.h"
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
-#include <assimp/Importer.hpp>
+#include "MeshLoader.h"
+#include "MeshData.h"
 
 class AKModel;
 class AKMesh : public RTTI
 {
+	enum class IndexFormat
+	{
+		INDEX8 = GL_UNSIGNED_BYTE,
+		INDEX16 = GL_UNSIGNED_SHORT,
+	};
+
+	enum class PrimitiveType
+	{
+		TRIANGLES = GL_TRIANGLES,
+		TRIANGLE_STRIP = GL_TRIANGLE_STRIP,
+		LINES = GL_LINES,
+		LINE_STRIP = GL_LINE_STRIP,
+		POINTS = GL_POINTS
+	};
+
+
 	RTTI_DECLARATIONS(AKMesh, RTTI)
 public:
 	AKMesh(AKModel& owner);
 	~AKMesh();
 
-	std::vector<glm::vec3>& getVertexPositions();
-	std::vector<glm::vec4>& getVertexColors();
-	std::vector<glm::vec3>& getVertexNormals();
-	std::vector<UINT>& getIndices();
-
 	void loadFromFile(std::string& filename);
 
 private:
-	std::vector<glm::vec3> m_vertexPositions;
-	std::vector<glm::vec4> m_vertexColors;
-	std::vector<glm::vec3> m_vertexNormals;
-	std::vector<UINT> m_indices;
-	AKModel& m_owner;
 
+	AKModel& m_owner;
+	AKMeshLoader* m_meshLoader;
+	AKMeshData m_meshData;
 
 };
 

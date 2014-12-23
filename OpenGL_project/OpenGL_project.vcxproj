@@ -92,6 +92,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="ApplicationWindow.cpp" />
+    <ClCompile Include="AssimpMeshLoader.cpp" />
     <ClCompile Include="BulletPhysics.cpp" />
     <ClCompile Include="common\controls.cpp" />
     <ClCompile Include="common\objloader.cpp" />
@@ -110,6 +111,7 @@
     <ClCompile Include="GameClock.cpp" />
     <ClCompile Include="GLRenderObject.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshData.cpp" />
     <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="OpenGL_main.cpp" />
@@ -123,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="ApplicationWindow.h" />
+    <ClInclude Include="AssimpMeshLoader.h" />
     <ClInclude Include="BulletPhysics.h" />
     <ClInclude Include="CommonInc.h" />
     <ClInclude Include="common\controls.hpp" />
@@ -143,6 +146,7 @@
     <ClInclude Include="GameClock.h" />
     <ClInclude Include="GLRenderObject.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshData.h" />
     <ClInclude Include="MeshLoader.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="BaseRenderObject.h" />

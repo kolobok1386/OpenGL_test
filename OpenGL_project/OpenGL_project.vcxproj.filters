@@ -114,6 +114,12 @@
     <ClCompile Include="GameClock.cpp">
       <Filter>Framework\Common</Filter>
     </ClCompile>
+    <ClCompile Include="AssimpMeshLoader.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshData.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL_main.h">
@@ -211,6 +217,12 @@
     </ClInclude>
     <ClInclude Include="GameClock.h">
       <Filter>Framework\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="AssimpMeshLoader.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshData.h">
+      <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

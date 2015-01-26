@@ -21,7 +21,7 @@ protected:
 
 	int m_vertexsizeBytes;
 	size_t m_vertexNum;
-	std::vector<MeshVertexAttrib> m_vertexAttribs;
+	//std::vector<MeshVertexAttrib> m_vertexAttribs;
 
 	std::vector<glm::vec3> m_vertexPositions;
 	std::vector<glm::vec4> m_vertexColors;

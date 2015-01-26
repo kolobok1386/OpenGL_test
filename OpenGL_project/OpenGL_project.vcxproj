@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>d:\temp\cegui-0.8.4\cegui-0.8.4\build\lib\;$(SolutionDir)/libs;$(SolutionDir)/external/glfw/lib/x86/;$(SolutionDir)/external/assimp/lib/assimp_debug-dll_win32/;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)\external\glm;$(SolutionDir)\external\gl3w\include;$(SolutionDir)\external\glfw\include;$(SolutionDir)\libs\bullet-2.82-r2704\src;$(SolutionDir)\external\assimp\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)/libs;$(SolutionDir)/external/glfw/lib/x86/;$(SolutionDir)/external/assimp/bin/assimp_debug-dll_win32/;$(SolutionDir)/external/assimp/lib/assimp_debug-dll_win32/;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\libs\bullet-2.82-r2704\Glut\;$(SolutionDir)\external\glm;$(SolutionDir)\external\gl3w\include;$(SolutionDir)\external\glfw\include;$(SolutionDir)\libs\bullet-2.82-r2704\src;$(SolutionDir)\external\assimp\include;$(IncludePath)</IncludePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,7 +66,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>CEGUIBase-0_d.lib;CEGUIExpatParser_d.lib;CEGUISILLYImageCodec_d.lib;CEGUIOpenGLRenderer-0_d.lib;CEGUICoreWindowRendererSet_d.lib;opengl32.lib;glfw3.lib;glew32.lib;assimpd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;assimpd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
     </Link>

@@ -9,7 +9,7 @@
 #include <GL/glew.h>
 
 // Включаем GLFW
-#include <GL/glfw3.h>
+#include <GLFW/glfw3.h>
 
 // Включаем GLM
 #include <glm/glm.hpp>
